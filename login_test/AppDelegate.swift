@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainVC = AuthVC()
+        let layer = CAGradientLayer()
+        layer.frame = mainVC.view.bounds
+        layer.colors = [UIColor.purple.cgColor, UIColor.blue.cgColor]
+        layer.startPoint = CGPoint(x: 0.5, y: 1)
+        layer.endPoint = CGPoint(x:0, y:0)
+        mainVC.view.layer.addSublayer(layer)
+//        mainVC.view.layer.addSublayer(layer)﻿
+//        mainVC.view.backgroundColor = .purple
+        self.window!.rootViewController = mainVC
+        self.window!.makeKeyAndVisible()
         return true
     }
 
